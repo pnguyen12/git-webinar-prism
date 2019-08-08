@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import 'reset';
+@import 'animations';
+
+body {
+  padding: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.home-wrapper {
+  height: 90vh;
+  padding: 40px;
+  background-image: linear-gradient(to right bottom, rgba(239, 60, 54, 0.877), rgba(255, 255, 255, 0.842));
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  text-align: center;
+  .home-header {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    letter-spacing: 2rem;
+    font-weight: 100;
+    .home-header-text {
+      font-size: 3.5rem;
+      animation: moveInLeft 0.7s ease-out;
+    }
+    .home-header-sub {
+      font-size: 2.5rem;
+      margin-bottom: 4rem;
+      animation: moveInRight 0.7s ease-out;
+    }
+    .btn {
+      &:link, &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        color: gray;
+        font-size: 1.6rem;
+        letter-spacing: initial;
+      }
+      &:hover {
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+        transform: translateY(-3px);
+      }
+      &:active {
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        transform: translateY(-1px);
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        transition: .4s all;
+        border-radius: 10rem;
+      }
+      &:hover:after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+    .btn-white {
+      &:after {
+        background: #fff;
+      }
+      background: #fff;
+    }
+    .btn-animate {
+      /* animation shorthand has 4 props animation name, animation-duration, animation-timing-function, animation-delay*/
+      animation: moveInBottom .5s ease-out .75s;
+      /* animation fill mode applys the 0% animation before it even starts! */
+      animation-fill-mode: backwards;
+    }
+  }
+}
+
+
+
+
